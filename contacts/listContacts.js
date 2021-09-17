@@ -1,7 +1,15 @@
 const fs = require('fs/promises')
 
-const contactsPath = require('../db/contacts.json')
+const contactsPath = 'db/contacts.json'
 
-const listContacts = async () => contactsPath
+async function listContacts() {
+  try {
+    const data = await fs.readFile(contactsPath, 'utf-8')
+    const result = JSON.parse(data)
+    return result
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 module.exports = listContacts
