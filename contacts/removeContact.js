@@ -5,11 +5,11 @@ async function removeContact(contactId) {
   const contacts = await listContacts()
   const idx = contacts.findIndex((item) => item.id === contactId)
   if (idx === -1) {
-    return null
+    return console.log(`Контакта с таким id ${contactId} нет`)
   }
   const newContacts = contacts.filter((item) => item.id !== contactId)
   await updateContacts(newContacts)
-  console.log(`Contact with id ${contactId} was sucessfully removed`)
+  console.log(`Контакт с id ${contactId} был успешно удален`)
 }
 
 module.exports = removeContact

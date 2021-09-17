@@ -10,12 +10,12 @@ async function invokeAction({ action, id, name, email, phone }) {
         break
 
       case 'get':
-        return console.log(await contactFunctions.getContactById(id))
+        return await contactFunctions.getContactById(id)
         break
 
       case 'add':
         return console.log(
-          'This contact sucessfully added: \n',
+          'Данный контакт был успешно добавлен: \n',
           await contactFunctions.addContact(name, email, phone),
         )
         break

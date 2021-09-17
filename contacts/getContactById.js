@@ -4,9 +4,9 @@ async function getContactById(contactId) {
   const contacts = await listContacts()
   const contact = contacts.find((item) => item.id === contactId)
   if (!contact) {
-    return null
+    return console.log(`Нет контакта с таким Id ${contactId}`)
   }
-  return contact
+  return console.log(contact)
 }
 
 module.exports = getContactById
