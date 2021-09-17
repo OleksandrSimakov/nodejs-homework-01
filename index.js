@@ -21,7 +21,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         break
 
       case 'remove':
-        return console.log(await contactFunctions.removeContact(id))
+        return await contactFunctions.removeContact(id)
         break
 
       default:

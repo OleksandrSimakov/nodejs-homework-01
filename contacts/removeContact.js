@@ -9,7 +9,7 @@ async function removeContact(contactId) {
   }
   const newContacts = contacts.filter((item) => item.id !== contactId)
   await updateContacts(newContacts)
-  return `Contact with id ${contactId} was sucessfully removed`
+  console.log(`Contact with id ${contactId} was sucessfully removed`)
 }
 
 module.exports = removeContact
