@@ -7,6 +7,7 @@ async function addContact(name, email, phone) {
   const newContact = { id: v4(), name, email, phone }
   const newContacts = [...contacts, newContact]
   await updateContacts(newContacts)
+  return newContact
 }
 
 module.exports = addContact
